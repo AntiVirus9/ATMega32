@@ -31,7 +31,7 @@ reset:	jmp start		;reset vektor
 .org 0x100
 start: 	ldi r16,0x5F	;nastaveni ukazatele
 		out SPL,r16		;zasobniku na 0x085F
-		ldi r16,0x08	;konec SRAM
+		ldi r16,0x08		;konec SRAM
 		out SPH,r16	
 
 		ldi r16, 0xff
@@ -51,7 +51,7 @@ start: 	ldi r16,0x5F	;nastaveni ukazatele
 		LCD_DATA ':'
 	
 
-		LCD_CMD 0x40
+		LCD_CMD 0x40		;vlastní znak baterie: 0%
 		LCD_DATA 0x04
 		LCD_DATA 0x0E
 		LCD_DATA 0x0A
@@ -61,7 +61,7 @@ start: 	ldi r16,0x5F	;nastaveni ukazatele
 		LCD_DATA 0x0A
 		LCD_DATA 0x0E
 
-		LCD_CMD 0x48
+		LCD_CMD 0x48		;vlastní znak baterie: 50%
 		LCD_DATA 0x04
 		LCD_DATA 0x0E
 		LCD_DATA 0x0A
@@ -71,7 +71,7 @@ start: 	ldi r16,0x5F	;nastaveni ukazatele
 		LCD_DATA 0x0E
 		LCD_DATA 0x0E
 
-		LCD_CMD 0x50
+		LCD_CMD 0x50		;vlastní znak baterie: 75%
 		LCD_DATA 0x04
 		LCD_DATA 0x0E
 		LCD_DATA 0x0A
@@ -81,7 +81,7 @@ start: 	ldi r16,0x5F	;nastaveni ukazatele
 		LCD_DATA 0x0E
 		LCD_DATA 0x0E
 
-		LCD_CMD 0x58
+		LCD_CMD 0x58		;vlastní znak baterie: 100%
 		LCD_DATA 0x04
 		LCD_DATA 0x0E
 		LCD_DATA 0x0E
@@ -91,7 +91,7 @@ start: 	ldi r16,0x5F	;nastaveni ukazatele
 		LCD_DATA 0x0E
 		LCD_DATA 0x0E
 		
-		LCD_CMD 0x8C
+		LCD_CMD 0x8C		; vypsání vlastních znaků
 		LCD_DATA 0x00
 		LCD_DATA 0x01
 		LCD_DATA 0x02
